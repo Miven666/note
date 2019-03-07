@@ -65,15 +65,37 @@
 
 ### rpm(软件包)
 - 查找软件包
-`rpm -q python`
+  `rpm -q python`
+
 - 查询某个包所有的安装文件
-`rpm -ql python`
+  `rpm -ql python`
+
 - 查找已安装的软件包
-`rpm -qa`
+  `rpm -qa`
+
 - 查找软件包，根据命令
-`rpm -qf java`
+  `rpm -qf java`
+
 - 删除某个包
-`rpm -e python`
+  `rpm -e python`
+
+  ### tar
+
+  - 解压到当前目录 `tar -zxvf test.tar.gz`
+
+  - 解压到指定目录 `tar -zxvf test.tar.gz ../`
+
+### 在vi或vim上查找字符串
+
+- 在命令模式下，输入`/ 字符`  从头查找， 输入`？ 字符` 从尾查找
+- 按下回车，可以看到vim把光标移动到该字符处
+- 再按n（小写）查看下一个匹配
+- 按N(大写）查看上一个匹配
+- 取消高亮 `noh`、`set-noh`、`nohlsearch`、`set nohlsearch`
+
+​    
+
+  
 
 ## Linux 文件
 ### Linux根目录”/“下各个系统文件夹的含义和用途
