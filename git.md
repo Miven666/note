@@ -22,6 +22,7 @@ Linux 内核开源项目有着为数众广的参与者。
 - Linux 安装
     - yum安装 `yum install git`
     - 查看版本 `git --version`
+    - [安装最新版教程地址](https://www.cnblogs.com/BinBinStory/p/7113956.html)
 
 ## gitignore
 - gitignore需要忽略子目录中，拥有某后缀的文件，用**代表所有子目录
