@@ -171,6 +171,17 @@ fi
 ```
 
 ### Rabbitmq启动命令
-```
+```shell
 docker stop rabbitmq3.7.7; docker rm rabbitmq3.7.7; docker run -d --name rabbitmq3.7.7 -p 5672:5672 -p 15672:15672 -v /var/log/rabbitmq:/var/log/rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin docker.io/rabbitmq:3.7.7-management
 ```
+
+### springboot启动命令
+
+```shell
+pid=`ps aux|grep handOfGod |grep -v grep |grep java |awk '{print $2}'`;
+if [ "$pid" -gt 0 ]; then kill -9 $pid;fi
+rm -rf   /usr/local/jar/handOfGod/handOfGod.jar
+cp /opt/warfiles/target/handOfGod.jar  /usr/local/jar/handOfGod/
+nohup java -jar /usr/local/jar/handOfGod/handOfGod.jar --spring.profile.active=test > handOfGod.log 2>&1 &
+```
+
