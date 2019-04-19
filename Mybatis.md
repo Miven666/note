@@ -4,7 +4,14 @@
 
 ## 未整合前
 ### SqlSessionFactoryBuilder
-- 在不同条件下，使用建造者模式来统一创建SqlSessionFactory
+> 在不同条件下，使用建造者模式来统一创建SqlSessionFactory
+- 调用XMLConfigBuilder构建Configuration对象，然后将该Configuration对象作为参数构建一个SqlSessionFactory对象。
+### XMLConfigBuilder
+> 读取所有的MybatisMapConfig.xml和所有的*Mapper.xml文件，构建Mybatis运行的核心对象Configuration对象
+- 调用XMLMapperBuilder用于读取*Mapper文件
+
+### XMLMapperBuilder
+- 使用XMLStatementBuilder来读取和build所有的SQL语句
 
 ### SqlSessionFactory
 - Mybatis都是以SqlSessionFactory的实例为中心的
