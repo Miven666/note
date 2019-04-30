@@ -29,3 +29,14 @@ Linux 内核开源项目有着为数众广的参与者。
 ```
 **/*.iml
 ```
+
+## 场景
+
+- 删除远程仓库文件但不删除本地仓库资源
+```shell
+git rm -r --cached .idea
+git add .idea //若.gitignore文件已经忽略，可不执行此语句
+git commit -m 'ignore .idea'
+git push
+```
+
