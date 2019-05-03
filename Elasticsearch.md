@@ -96,14 +96,25 @@ Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索
     `max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]`
     `max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]`
 
- - 切换至root用户：`su root`
- - 修改最大文件数
-   - 在`/etc/security/limits.conf` 添加
-   ```java
-    * soft nofile 65536
-    * hard nofile 65536
-   ```
- - 修改虚拟内存配置至提示的最低值：`sysctl -w vm.max_map_count=262144`
+切换至root用户：`su root`
+
+- 修改最大文件数
+  - 在`/etc/security/limits.conf` 添加
+
+      ```java
+       * soft nofile 65536
+       * hard nofile 65536
+      ```
+
+- 修改虚拟内存配置
+
+  - 在 /etc/sysctl.conf  添加
+
+    ```shell
+    vm.max_map_count=655360
+    ```
+
+  - 执行命令 `sysctl -p`
 
 4. 日志权限错误
 
