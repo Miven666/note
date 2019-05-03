@@ -40,3 +40,18 @@ git commit -m 'ignore .idea'
 git push
 ```
 - 和远程进行比较 `git diff demo.md`
+- 修改密码
+> 输入这个命令后,以后只要在输入一次用户名密码
+```shell
+git config --global credential.helper store
+```
+- 查看用户名和邮箱地址
+```shell
+git config user.name
+git config user.email
+```
+- 修改用户名和邮箱地址
+```shell
+git config --global user.name "mingzhi.xie"
+git config --global user.email "xie6032mail@163.com"
+```
