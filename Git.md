@@ -39,4 +39,4 @@ git add .idea //若.gitignore文件已经忽略，可不执行此语句
 git commit -m 'ignore .idea'
 git push
 ```
-
+- 和远程进行比较 `git diff demo.md`
