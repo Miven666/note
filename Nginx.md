@@ -114,7 +114,7 @@ http {
         }
     }
 }
-``` 
+```
 
 - 负载均衡（直接添加server即可）
 ```
@@ -127,7 +127,7 @@ http {
     } 
     ...
 }
-``` 
+```
 权重调节（weight）
 ```
 ...
@@ -139,7 +139,7 @@ http {
     } 
     ...
 }
-``` 
+```
 
 - 压缩文件
 ```
@@ -186,7 +186,12 @@ server {
 - [emerg] mkdir() "/var/temp/nginx/client" failed (2: No such file or directory)
 root下手动创建即可：`mkdir -p /var/temp/nginx/client`
 - 重启服务器后启动提示/var/run/nginx找不到
-```
-nginx: [error] open() "/var/run/nginx.pid" failed (2: No such file or directory)
-```
-进入`/var/run`新建`nginx`文件夹：`mkdir nginx`
+    ```
+    nginx: [error] open() "/var/run/nginx.pid" failed (2: No such file 		or directory)
+    ```
+	进入`/var/run`新建`nginx`文件夹：`mkdir nginx`
+
+- 响应状态码`504`
+
+  `nginx`错误日志提示：`upstream timed out (110: Connection timed out) while reading response header from upstream`
+	[解决方案](https://blog.csdn.net/u014218983/article/details/81217032)
