@@ -79,13 +79,13 @@
 - 删除某个包
   `rpm -e python`
 
-  ### tar
+### tar
 
   - 解压到当前目录 `tar -zxvf test.tar.gz`
 
   - 解压到指定目录 `tar -zxvf test.tar.gz ../`
 
-### 在vi或vim上查找字符串
+### vim(vi)
 
 - 在命令模式下，输入`/ 字符`  从头查找， 输入`？ 字符` 从尾查找
 - 按下回车，可以看到vim把光标移动到该字符处
@@ -93,10 +93,8 @@
 - 按N(大写）查看上一个匹配
 - 取消高亮 `noh`、`set-noh`、`nohlsearch`、`set nohlsearch`
 
-​    
-
-  
-
+### less
+- 在`:`直接输入百分比，跳转至指定百分比，如`:80%`
 ### free
 - 查看内存使用情况
   `free`
