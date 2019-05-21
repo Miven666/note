@@ -25,6 +25,7 @@
 - awk把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理
 - 查看nginx路径: ps aux | grep nginx
 - 查看nginx配置文件路径: /usr/sbin/nginx -t
+- 让/etc/profile文件修改后立即生效  `source /etc/profile` 或 `. /etc/profile`
 
 ### which(命令)
 - 查找命令路径 `which git`
