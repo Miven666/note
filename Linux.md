@@ -8,11 +8,12 @@
 - 修改系统默认的语言: `vi /etc/sysconfig/i18n`
 - 在启动java程序时加参数`-Duser.timezone=GMT+8`
 - 查看防火墙状态：`firewall-cmd --state`
+- 查看已经开放的端口：`firewall-cmd --list-ports`
 - 开放80端口：`firewall-cmd --zone=public --add-port=80/tcp --permanent`
     - `--zone` #作用域
     - `--add-port=80/tcp`  #添加端口，格式为：端口/通讯协议
     - `--permanent`   #永久生效，没有此参数重启后失效
-- 更新防火墙规则：`firewall-cmd --reload`
+- 重启防火墙：`firewall-cmd --reload`
 - 关闭防火墙： 
     - `service firewalld stop`
     - `systemctl stop firewalld.service`
@@ -21,7 +22,7 @@
     - `ps -ef | grep java`
     - -v`:表示忽略grep本身: `ps -ef | grep java | grep -v grep`
     - grep进程的条目显示处理命令优先于正则表达式: `ps -ef | grep [j]ava`
-- 查看端口号：`netstat -apn | grep PID`
+- 查看端口号：`netstat -lptn (老婆太牛)`
 - awk把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理
 - 查看nginx路径: `ps aux | grep nginx`
 - 查看nginx配置文件路径: `/usr/sbin/nginx -t`
@@ -243,5 +244,5 @@ nohup java -jar /usr/local/jar/handOfGod/handOfGod.jar --spring.profile.active=t
 ```
 
 ## 安装软件
-### lrzsz
 - `yum install lrzsz`
+- `yum -y install net-tools`
