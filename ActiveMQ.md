@@ -6,7 +6,7 @@
 - 第一步：把ActiveMQ 的压缩包上传到Linux系统
 - 第二步：解压缩
 - 第三步：启动
-```
+```shell
 使用bin目录下的activemq命令启动：
 [root@localhost bin]# ./activemq start
 关闭：
@@ -20,3 +20,4 @@
 ```
 
 登录用户名密码可在 `conf/jetty-realm.properties` 文件中修改
+
