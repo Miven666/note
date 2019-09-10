@@ -55,3 +55,12 @@ git config user.email
 git config --global user.name "mingzhi.xie"
 git config --global user.email "xie6032mail@163.com"
 ```
+
+- 多仓库同步
+
+```shell
+git remote set-url --add origin git@gitee.com:/Miven666/spring-learning.git
+```
+
+
+
