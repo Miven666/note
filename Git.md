@@ -73,8 +73,9 @@ git remote set-url --add origin git@gitee.com:/Miven666/spring-learning.git
 
 ```shell
 # 必须未推送至远程
-# SHA 是误提交之前的那次提交
 # -i 进入编辑模式
+# SHA 是误提交之前的那次提交
+# squash 表示所在提交合并进前一次提交
 git rebase -i [SHA]
 ```
 
