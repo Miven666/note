@@ -69,5 +69,11 @@ git config --global user.email "xie6032mail@163.com"
 git remote set-url --add origin git@gitee.com:/Miven666/spring-learning.git
 ```
 
+### 误提交补救
 
+```shell
+# 必须未推送至远程
+# SHA 是误提交之前的那次提交
+git rebase -i [SHA]
+```
 
