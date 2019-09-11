@@ -1,8 +1,8 @@
-# git
+# Git
 
 [官网下载地址](https://git-scm.com/downloads)
 
-## git 简史
+## 简史
 同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。
 
 Linux 内核开源项目有着为数众广的参与者。
@@ -18,45 +18,52 @@ Linux 内核开源项目有着为数众广的参与者。
 - 完全分布式
 - 有能力高效管理类似 Linux 内核一样的超大规模项目(速度和数据量)
 
-## git安装
+## 安装
 - Linux 安装
     - yum安装 `yum install git`
     - 查看版本 `git --version`
     - [安装最新版教程地址](https://www.cnblogs.com/BinBinStory/p/7113956.html)
 
-## gitignore
-- gitignore需要忽略子目录中，拥有某后缀的文件，用**代表所有子目录
+## 场景
+### 忽略文件
 ```
+# gitignore需要忽略子目录中，拥有某后缀的文件，用**代表所有子目录
 **/*.iml
 ```
+### 删除远程仓库文件但不删除本地仓库资源
 
-## 场景
-
-- 删除远程仓库文件但不删除本地仓库资源
 ```shell
 git rm -r --cached .idea
 git add .idea //若.gitignore文件已经忽略，可不执行此语句
 git commit -m 'ignore .idea'
 git push
 ```
-- 和远程进行比较 `git diff demo.md`
-- 修改密码
-> 输入这个命令后,以后只要在输入一次用户名密码
+### 和远程进行比较 
+
 ```shell
+git diff demo.md
+```
+
+### 修改密码
+
+```shell
+# 输入这个命令后,以后只要在输入一次用户名密码
 git config --global credential.helper store
 ```
-- 查看用户名和邮箱地址
+### 查看用户名和邮箱地址
+
 ```shell
 git config user.name
 git config user.email
 ```
-- 修改用户名和邮箱地址
+### 修改用户名和邮箱地址
+
 ```shell
 git config --global user.name "mingzhi.xie"
 git config --global user.email "xie6032mail@163.com"
 ```
 
-- 多仓库同步
+### 多仓库同步
 
 ```shell
 git remote set-url --add origin git@gitee.com:/Miven666/spring-learning.git
