@@ -10,6 +10,10 @@ cd /usr/local/mongodb/bin
 - 看已有数据库 `show dbs`
 - 切换数据库 `use test`
 - 查看已有集合 `show collections` 或 `show tables`
+- 查看集合 `db.collection_name.find()`
 - 创建集合 `db.createCollection(name, options)`
 - 插入集合 `db.collection_name.insert(document)`
 - 删除集合 `db.collection_name.remove(<query>,options)`
+- 查看指定列 
+  + 查看 id 和 title 列 `db.collection_name.find({}, {id:1,title:1})`
+  + 查看所有列除了 `content` `db.collection.find({}, {content:0})`
