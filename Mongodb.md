@@ -17,3 +17,36 @@ cd /usr/local/mongodb/bin
 - 查看指定列 
   + 查看 id 和 title 列 `db.collection_name.find({}, {id:1,title:1})`
   + 查看所有列除了 `content` `db.collection.find({}, {content:0})`
+
+### 导出数据
+
+```shell
+#!/bin/bash
+
+if [ ! $1 ]; then
+        echo " Example of use: $0 database_name [dir_to_store]"
+        exit 1
+fi
+db=$1
+out_dir=$2
+if [ ! $out_dir ]; then
+        out_dir="./"
+else
+        mkdir -p $out_dir
+fi
+
+tmp_file="fadlfhsdofheinwvw.js"
+echo "print('_ ' + db.getCollectionNames())" > $tmp_file
+cols=`/usr/local/mongodb/bin/mongo $db $tmp_file | grep '_' | awk '{print $2}' | tr ',' ' '`
+for c in $cols
+do
+    /usr/local/mongodb/bin/mongoexport -d $db -c $c -o "$out_dir/exp_${db}_${c}.json"
+done
+tar -czvf ${db}.tar.gz exp_* && rm -rf exp_*
+rm $tmp_file
+```
+
+
+
+- 用上述脚本导出指定库
+- 上传至 ftp `put feeder.tar.gz`
