@@ -27,6 +27,7 @@
 - 查看nginx路径: `ps aux | grep nginx`
 - 查看nginx配置文件路径: `/usr/sbin/nginx -t`
 - 让/etc/profile文件修改后立即生效  `source /etc/profile` 或 `. /etc/profile`
+- 修改密码：`passwd user`
 
 ### which(命令)
 - 查找命令路径 `which git`
