@@ -10,7 +10,10 @@ cd /usr/local/mongodb/bin
 - 看已有数据库 `show dbs`
 - 切换数据库 `use test`
 - 查看已有集合 `show collections` 或 `show tables`
-- 查看集合 `db.collection_name.find()`
+- 查看集合 
+  + 默认查询所有 `db.name.find()`
+  + 根据指定`key`值 db.name.fin({"key":"value"})
+  + 美化查询 `db.name.fin({"key":"value"}).pretty()`
 - 创建集合 `db.createCollection(name, options)`
 - 插入集合 `db.collection_name.insert(document)`
 - 删除集合 `db.collection_name.remove(<query>,options)`
@@ -48,5 +51,6 @@ rm $tmp_file
 
 
 
-- 用上述脚本导出指定库
+- 用上述脚本导出指定库	
 - 上传至 ftp `put feeder.tar.gz`
+- 远程连接 `mongodb/bin/mongo 10.125.145.104:55944/marketingdb -u m_marketing -p ELkVRIh1KoTQzFkCfM90`
