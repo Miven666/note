@@ -52,3 +52,5 @@
 ## 容器
 
 - 进入容器 `docker exec -it 容器ID /bin/bash `
+- 更新容器不重启 `docker update --restart=no 容器`
+- 更新容器重启 `docker update --restart=always 容器`
