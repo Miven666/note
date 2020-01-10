@@ -17,7 +17,7 @@ Redis是c语言开发的，安装需要c语言的编译环境,如果没有gcc需
 - 前端启动：在redis的安装目录下直接启动redis-server
 `[root@localhost bin]# ./redis-server`
 - 后台启动：
-```
+```shell
 把 /root/redis-3.0.0/redis.conf 复制到 /usr/local/redis/bin 目录下 cp redis.conf /usr/local/redis/bin/
 修改 redis.conf 文件 设置 daemonize yes
 启动时添加配置文件 ./redis-server redis.conf

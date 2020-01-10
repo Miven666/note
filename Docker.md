@@ -16,6 +16,24 @@
 - 关闭`systemctl stop docker`
 - 关闭 `service docker stop`
 
+## 镜像加速器
+
+- 配置镜像地址
+
+   在 `/etc/docker/daemon.json` 中写入如下内容（如果文件不存在请新建该文件） 
+
+  ```json
+  {
+    "registry-mirrors": [
+      "https://fwn4ll0a.mirror.aliyuncs.com",
+      "https://dockerhub.azk8s.cn",
+      "https://hub-mirror.c.163.com"
+    ]
+  }
+  ```
+
+  
+
 ## 开放远程端口
 
 - 编辑配置
@@ -54,3 +72,7 @@
 - 进入容器 `docker exec -it 容器ID /bin/bash `
 - 更新容器不重启 `docker update --restart=no 容器`
 - 更新容器重启 `docker update --restart=always 容器`
+
+## 安装 docker-compose
+
+- [官网安装文档](https://docs.docker.com/compose/install/)
