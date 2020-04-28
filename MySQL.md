@@ -1,6 +1,6 @@
 # MySQL
 
-# 删除表数据
+## 删除表数据
 - 让主键id 从1开始自增
 ```
 truncate table "表名字"
@@ -9,7 +9,21 @@ DELETE FROM "表名字";
 ALTER TABLE "表名字" AUTO_INCREMENT=1;
 ```
 
-# Navicat
 ## Navicat Premium 12 下载
 https://www.navicat.com.cn/download/navicat-premium
 
+## docker 安装
+- 拉取官方镜像（我们这里选择5.7，如果不写后面的版本号则会自动拉取最新版
+```shell
+docker pull mysql:5.7   # 拉取 mysql 5.7
+docker pull mysql       # 拉取最新版mysql镜像
+```
+- 运行容器
+```shell
+docker run -p 3306:3306 --name mysql \
+-v /Users/miven/Software/mysql/conf:/etc/mysql \
+-v /Users/miven/Software/mysql/logs:/var/log/mysql \
+-v /Users/miven/Software/mysql/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=root123 \
+-d mysql:5.7.29
+```
