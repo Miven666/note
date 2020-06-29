@@ -317,3 +317,21 @@ mvn deploy:deploy -file \
 	-Durl=<url-of-the-repository-to-deploy>
 ```
 
+
+### Spring Boot打jar包，排除lombok等scope=provided的依赖
+```xml
+<plugins>
+     <plugin>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-maven-plugin</artifactId>
+         <configuration>
+             <excludes>
+                 <exclude>
+                     <groupId>org.projectlombok</groupId>
+                     <artifactId>lombok</artifactId>
+                 </exclude>
+             </excludes>
+         </configuration>
+     </plugin>
+ </plugins> 
+```
