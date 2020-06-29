@@ -73,6 +73,31 @@
 - 更新容器不重启 `docker update --restart=no 容器`
 - 更新容器重启 `docker update --restart=always 容器`
 
+## 桥接网络（bridge）
+
+> 创建容器的时候指定ip
+
+- 创建
+
+  ```shell
+  docker network create --driver bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 zookeeper
+  ```
+
+- 查看所有网络
+
+  ```shell
+  docker network ls
+  ```
+
+- 查看指定网络
+
+  ```shell
+  docker network inspect zookeeper
+  ```
+
+  
+
 ## 安装 docker-compose
 
 - [官网安装文档](https://docs.docker.com/compose/install/)
+
