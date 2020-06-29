@@ -1,5 +1,6 @@
 # Linux
 ## Linux 命令
+- 查看环境变量： `env`
 - 查看系统语言： `echo $LANG`
 - 查看系统安装的语言包： `locale`
 - 查看系统时间和时区：`date` 或 `date -R`
@@ -59,6 +60,9 @@
 - 查找已安装的软件包 `rpm -qa`
 - 查找软件包，根据命令 `rpm -qf java`
 - 删除某个包 `rpm -e python`
+- 安装 `rpm -i example.rpm`
+- 安装并显示文件信息 `rpm -iv example.rpm`
+- 安装并显示文件信息和进度 `rpm -ivh example.rpm `
 
 ### tar
 - 解压到当前目录 `tar -zxvf test.tar.gz`
@@ -74,13 +78,22 @@
 
 ### less
 - 在`:`直接输入百分比，跳转至指定百分比，如`:80%`
+
+### cat
+- 从最后一百行查找ABC`cat xxx.log | tail -n 100 | grep ABC`
+- 从头一百行查找DE`cat xxx.log | head -n 100 | grep DE`
 ### free
 - 查看内存使用情况 `free`
 - 查看内存使用情况，M为单位 `free -h`
 
 ### top
 - 查看资源管理器 `top`
-- 查看指定用户的资源管理器 `top -u root`
+- 切换显示单位：资源界面按`e`
+- 查看资源并显示完整命令行：`top -c`或资源界面按`c`
+- 查看指定用户 `top -u root`
+- 查看指定进程 `top -p xxx`
+- 按照cpu使用率进行排序显示`top -o  +%CPU`
+- 按照内存使用率进行排序显示`top -o  +%MEM`
 
 ## Linux 文件
 ### Linux根目录`/`下各个系统文件夹的含义和用途
