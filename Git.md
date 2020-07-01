@@ -43,7 +43,11 @@ git push
 ```shell
 git diff demo.md
 ```
-
+### 提交指定文件
+```shell
+git add xxx
+git commit -m "xxx"
+```
 ### 修改密码
 
 ```shell
