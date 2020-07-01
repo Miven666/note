@@ -304,17 +304,17 @@
 
 - `-U` 强制去远程更新snapshot的插件或依赖，默认每天只更新一次
 
-将自己的jar包部署到远程仓库去，可以使用 `deploy` 指令：
+### 部署和安装
+- 将自己的jar包安装到仓库
+```shell
+mvn install:install-file -Dfile=/Users/miven/Work/migucore-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=migucore -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
+```
+- 将自己的jar包部署到远程仓库去
 
 ```shell
-mvn deploy:deploy -file \
-	-DgroupId=<group-id> \
-	-DartifactId=<artifact-id> \
-	-Dversion=<version> \
-	-Dpackaging=<type-of-packaging> \
-	-Dfile=<path-to-file> \ 
-	-DrepositoryId=<id-to-map-on-server-section-of-settings.xml> \ 
-	-Durl=<url-of-the-repository-to-deploy>
+mvn deploy:deploy-file -Dfile=/Users/miven/Work/migucore-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=migucore -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-snapshots
+
+mvn deploy:deploy-file -Dfile=/Users/miven/Work/sso-filter-0.0.1.jar -DgroupId=com.migu -DartifactId=sso-filter -Dversion=0.0.1 -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-releases
 ```
 
 
