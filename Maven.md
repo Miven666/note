@@ -307,14 +307,20 @@
 ### 部署和安装
 - 将自己的jar包安装到仓库
 ```shell
-mvn install:install-file -Dfile=/Users/miven/Work/migucore-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=migucore -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
+mvn install:install-file -Dfile=/Users/miven/Work/lib/migucore/migucore-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=migucore -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DpomFile=pom.xml
+
+mvn install:install-file -Dfile=/Users/miven/Work/lib/ABCacheV2/ABCacheV2-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=ABCacheV2 -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DpomFile=pom.xml
 ```
 - 将自己的jar包部署到远程仓库去
 
 ```shell
-mvn deploy:deploy-file -Dfile=/Users/miven/Work/migucore-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=migucore -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-snapshots
+mvn deploy:deploy-file -Dfile=/Users/miven/Work/lib/migucore/migucore-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=migucore -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-snapshots -DpomFile=pom.xml
 
-mvn deploy:deploy-file -Dfile=/Users/miven/Work/sso-filter-0.0.1.jar -DgroupId=com.migu -DartifactId=sso-filter -Dversion=0.0.1 -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-releases
+mvn deploy:deploy-file -Dfile=/Users/miven/Work/lib/ABCache/ABCache-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=ABCache -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-snapshots -DpomFile=pom.xml
+
+mvn deploy:deploy-file -Dfile=/Users/miven/Work/lib/ABCacheV2/ABCacheV2-0.0.1-SNAPSHOT.jar -DgroupId=com.migu -DartifactId=ABCacheV2 -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-snapshots -DpomFile=pom.xml
+
+mvn deploy:deploy-file -Dfile=/Users/miven/Work/lib/sso-filter/sso-filter-0.0.1.jar -DgroupId=com.migu -DartifactId=sso-filter -Dversion=0.0.1 -Dpackaging=jar -DrepositoryId=nexus -Durl=http://120.204.115.134:8081/repository/maven-releases -DpomFile=pom.xml
 ```
 
 
