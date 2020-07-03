@@ -83,3 +83,7 @@ git remote set-url --add origin git@gitee.com:/Miven666/spring-learning.git
 git rebase -i [SHA]
 ```
 
+### 拉取指定用户提交记录并保存到文件
+```shell
+git log --date=iso --pretty=format:"%h","%an","%ad","%s"  |grep "mingzhi.xie" >> ~/Work/file/demo.csv
+```
